@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "node server/express.js"
+    "server": "node server/express.js",
+    "server:health-test": "VERSION='1.0.0' node server/express.js"
   },
   "dependencies": {
     "express": "^4.17.2",

@@ -1,8 +1,13 @@
 FROM node:16-alpine
 
-# expose port 80, or the value of PORT if provided
-EXPOSE ${PORT:-3000}
+ENV NODE_ENV=production
+ENV PORT=3000
 
+# provided on docker build, don't modify on runtime 
+ENV APP_BUILD_SHA=unknown
+ENV VERSION=unknown
+
+EXPOSE ${PORT}
 USER node
 
 WORKDIR /app
